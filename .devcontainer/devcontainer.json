@@ -1,0 +1,15 @@
+{
+	"name": "laravel",
+	"service": "laravel",
+	"workspaceFolder": "/var/www/app",
+	"dockerComposeFile": "../.docker/docker-compose.yml",
+	"remoteUser": "appuser",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": [
+		"bmewburn.vscode-intelephense-client",
+		"graphql.vscode-graphql"
+	],
+}

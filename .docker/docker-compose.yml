@@ -1,0 +1,27 @@
+version: '3'
+services:
+  laravel:
+    image: robsontenorio/laravel
+    environment:
+      DATABASE_CLIENT: postgres_db
+      DATABASE_NAME: postgres_db
+      DATABASE_HOST: postgres_db
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: postgres_db
+      DATABASE_PASSWORD: postgres_db
+    links:
+      - postgres_db:postgres_db
+    volumes:
+      - ../:/var/www/app:cached
+    ports:
+      - 8080:8080
+    depends_on: 
+      - postgres_db
+
+  postgres_db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres_db
+      POSTGRES_PASSWORD: postgres_db
+    ports:
+      - '5432:5432'
