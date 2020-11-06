@@ -1,5 +1,6 @@
 <div>
-    Show Tweets
+    <h1>Posts</h1>
+    
     <p>{{$content}}</p>
 
     <form method="post" wire:submit.prevent="create">
@@ -7,9 +8,9 @@
         @error('content')
         {{$message}}
         @enderror
-        <button type="submit">Criar Tweet</button>
+        <button type="submit">Criar Post</button>
     </form>
-
+    <hr>
     @foreach($tweets as $tweet)
     {{$tweet->user->name}} - {{$tweet->content}} <br />
     @endforeach
